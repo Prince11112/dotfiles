@@ -94,3 +94,9 @@ function basedirname {
     fi
 }
 
+function cds {
+    cd "$HOME/src/$1"
+}
+
+compctl -/ -W "$HOME/src" cds
+
