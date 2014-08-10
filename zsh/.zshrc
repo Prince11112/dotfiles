@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="amuse"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -73,3 +73,24 @@ export PATH="bin:/opt/boxen/rbenv/shims:/opt/boxen/rbenv/bin:/opt/boxen/ruby-bui
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
+function cdp {
+  path_supplied=`pwd`
+  project_path=`basedirname $path_supplied`
+  cd $project_path
+}
+
+
+function basedirname {
+    return_path=`expr $1`
+    dir_name=`dirname $return_path`
+    if [ "$dir_name" = "$HOME/src" ]
+    then
+        echo $return_path
+    else
+        echo `basedirname $dir_name`
+    fi
+}
+
