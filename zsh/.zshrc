@@ -103,7 +103,7 @@ function gitout {
  current_branch=`git rev-parse --abbrev-ref HEAD` && git checkout master && git branch -D $current_branch && git remote prune origin && git fetch upstream && git fetch origin && git reset --ha     rd upstream/master && git push && cap uat deploy
 }
 
-funciton git_init {
+function git_init {
   repo=`git remote -v | grep fetch | cut -f 2 | cut -d " " -f 1 | awk -F/ '{print $(NF)}'`
   for i in `git remote`; do git remote remove $i; done
   git remote add origin git@github.com:manvil/$repo
