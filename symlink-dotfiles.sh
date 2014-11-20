@@ -7,3 +7,4 @@ rm -rf ~/.oh-my-zsh/custom
 ln -s ~/dotfiles/zsh/custom/ ~/.oh-my-zsh/custom
 ln -s ~/dotfiles/irb/.irbrc ~/.irbrc
 # cp ~/dotfiles/Inconsolata.otf ~/Library/Fonts/
+echo 1
