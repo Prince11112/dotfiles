@@ -110,6 +110,10 @@ function git_init {
   git remote add upstream git@github.com:red-ant/$repo
 }
 
+function gitout {
+  current_branch=`git rev-parse --abbrev-ref HEAD` && git checkout master && git branch -D $current_branch && git remote prune origin && git fetch upstream && git fetch origin && git reset --hard upstream/master && git push && cap uat deploy
+}
+
 bindkey -e
 bindkey '[C' forward-word
 bindkey '[D' backward-word
