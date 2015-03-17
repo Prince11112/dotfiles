@@ -117,3 +117,7 @@ function gitout {
 bindkey -e
 bindkey '[C' forward-word
 bindkey '[D' backward-word
+
+function gitlatest {
+  git checkout master && git fetch upstream && git fetch origin && git reset --hard upstream/master && git push origin master && git remote prune origin
+}
