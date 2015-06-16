@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="amuse"
+ZSH_THEME="alanpeabody"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -51,11 +51,10 @@ ZSH_THEME="amuse"
 plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-source /opt/boxen/env.sh
 
 # User configuration
 
-export PATH="bin:/opt/boxen/rbenv/shims:/opt/boxen/rbenv/bin:/opt/boxen/ruby-build/bin:node_modules/.bin:/opt/boxen/nodenv/shims:/opt/boxen/nodenv/bin:/opt/boxen/bin:/opt/boxen/homebrew/bin:/opt/boxen/homebrew/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin"
+export PATH="$PATH:$HOME/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -73,8 +72,6 @@ export PATH="bin:/opt/boxen/rbenv/shims:/opt/boxen/rbenv/bin:/opt/boxen/ruby-bui
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 function cdp {
   path_supplied=`pwd`
