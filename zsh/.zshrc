@@ -139,3 +139,6 @@ else
     start_agent;
 fi
 
+if [ -f ~/personal.zshrc ]; then
+  source ~/personal.zshrc
+fi
