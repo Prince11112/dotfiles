@@ -118,7 +118,7 @@ bindkey '[D' backward-word
 function gitlatest {
   git checkout master && git fetch upstream && git fetch origin && git reset --hard upstream/master && git push origin master && git remote prune origin
 }
-
+SSH_ENV="$HOME/.ssh/environment"
 # start the ssh-agent
 function start_agent {
     echo "Initializing new SSH agent..."
