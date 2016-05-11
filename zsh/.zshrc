@@ -50,6 +50,10 @@ ZSH_THEME="alanpeabody"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git zsh-syntax-highlighting)
 
+
+if [ -f ~/personal.zshrc ]; then
+  source ~/personal.zshrc
+fi
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -137,8 +141,4 @@ if [ -f "${SSH_ENV}" ]; then
     }
 else
     start_agent;
-fi
-
-if [ -f ~/personal.zshrc ]; then
-  source ~/personal.zshrc
 fi
