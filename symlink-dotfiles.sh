@@ -1,10 +1,9 @@
 #!/bin/bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-ln -s ~/dotfiles/vim/.vim/ ~/.vim
-ln -s ~/dotfiles/vim/.vimrc ~/.vimrc
-ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
-rm -rf ~/.oh-my-zsh/custom
-ln -s ~/dotfiles/zsh/custom/ ~/.oh-my-zsh/custom
-ln -s ~/dotfiles/irb/.irbrc ~/.irbrc
-# cp ~/dotfiles/Inconsolata.otf ~/Library/Fonts/
+if [ -f ~/.vim ]; then mv ~/.vim ~/.vim_backup; fi; ln -s $DIR/vim/.vim/ ~/.vim
+if [ -f ~/.vimrc ]; then mv ~/.vimrc ~/.vimrc_backup; fi; ln -s $DIR/vim/.vimrc ~/.vimrc
+if [ -f ~/.zshrc ]; then mv ~/.zshrc ~/.zshrc_backup; fi; ln -s $DIR/zsh/.zshrc ~/.zshrc
+if [ -f ~/.oh-my-zsh/custom ] ; then rm -rf ~/.oh-my-zsh/custom; fi; ln -s $DIR/zsh/custom/ ~/.oh-my-zsh/custom
+if [ -f ~/.irbrc ]; then mv ~/.irbrc ~/.irbrc_backup; fi; ln -s $DIR/irb/.irbrc ~/.irbrc
 echo 1
