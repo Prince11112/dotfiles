@@ -51,14 +51,14 @@ ZSH_THEME="alanpeabody"
 plugins=(git zsh-syntax-highlighting)
 
 
-if [ -f ~/personal.zshrc ]; then
-  source ~/personal.zshrc
+if [ -f ~/pre.zshrc ]; then
+  source ~/pre.zshrc
 fi
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.rvm/bin:$HOME/.rbenv/shims"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -141,4 +141,8 @@ if [ -f "${SSH_ENV}" ]; then
     }
 else
     start_agent;
+fi
+
+if [ -f ~/post.zshrc ]; then
+  source ~/post.zshrc
 fi
