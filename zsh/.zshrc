@@ -132,6 +132,7 @@ function start_agent {
     chmod 600 "${SSH_ENV}"
     . "${SSH_ENV}" > /dev/null
     /usr/bin/ssh-add
+    /usr/bin/ssh-add -K ~/.ssh/*.pem
 }
 
 if [ -f "${SSH_ENV}" ]; then
